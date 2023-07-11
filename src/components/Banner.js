@@ -14,12 +14,16 @@ const Banner = () => {
                         lg:gap-x-12  '>
           {/*Texto*/}
           <div className=' flex-1 text-center font-secondary lg:text-left'>
-            <h1 className='text-[55px] font-bold leading-[0.8] lg:text[110px]'>
+            <motion.h1 
+               variants={fadeIn('up',0.3)} 
+               initial="hidden"
+               whileInView={'show'} viewport={{once:false, amount: 0.7}} 
+               className='text-[55px] font-bold leading-[0.8] lg:text[110px]'>
               Name <span>Surname</span>
-            </h1>
+            </motion.h1>
 
             {/*Texto Animacion*/}
-            <div className='mb-6 text-[36px] lg:text-[28px] font-secondary
+            <div className='mb-2 mt-6 text-[36px] lg:text-[28px] font-secondary
                            font-semibold  leading-[-1]'>
               <span className='text-white mr-4 '>Your Profession</span>
               <TypeAnimation
@@ -38,7 +42,7 @@ const Banner = () => {
               />
 
               {/*Texto Detalle*/}
-              <p className='mb-8 max-w-lg mx-auto lg:mx-0'>
+              <p className=' mb-2 mt-8 max-w-lg mx-auto lg:mx-0 text-lg lg:text-[20px] '>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a mollis
                 turpis, a suscipit tellus. Nullam feugiat erat varius massa consequat, at aliquam risus commodo.
                 Ut quis felis blandit, consequat enim id, accumsan est. Integer nec nulla fringilla, dictum nunc ac, hendrerit dolor.
@@ -47,7 +51,7 @@ const Banner = () => {
             </div>
 
             {/*Portafolio Link*/}
-            <div id="seccion_portafolio" className='flex max-w-max gap-x-6 items-center'>
+            <div id="seccion_portafolio" className='flex max-w-max gap-x-6 items-center mx-auto lg:mx-0'>
               <a href='#' className='text-gradient btn-link'>
                 My Portfolio
               </a>
@@ -67,13 +71,12 @@ const Banner = () => {
           </div>
 
           {/*Imagen*/}
-          <div>
+          <div className='hidden lg:flex flex-l max-w-[320px]
+                          lg:max-w[482px]'>
             <img src={Image} alt=''></img>
           </div>
-
         </div>
       </div>
-
     </section>
 
   )
